@@ -1,0 +1,17 @@
+@import "../../variables.scss";
+
+.display {
+    height: 10rem;
+    margin-bottom: 4rem;
+    padding: .5rem;
+    font-weight: 300;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    span {
+        font-size: 3.5rem;
+        color: $color-grey-light;
+    }
+}

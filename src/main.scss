@@ -1,0 +1,37 @@
+@import "./variables.scss";
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, $color-primary-light, $color-grey);
+    background-repeat: no-repeat;
+
+    font-family: $font-main;
+    color: $color-white;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+
+    li {
+        a.active {
+            border-bottom: 2px solid $color-grey;
+
+            &:hover {
+                border-bottom: 2px solid $color-grey;
+            }
+        }
+    }
+}

@@ -1,9 +1,10 @@
 import styles from "./ButtonMatrix.module.scss";
 import { useEffect } from "react";
 
+import { useCalc } from "../../hooks/useCalc.jsx";
+
 import Button from "../Button/Button";
 
-import { useCalc } from "../../hooks/useCalc.jsx";
 
 const btnMatrix = [
     ["C", "DEL", "%", "/"],
@@ -16,7 +17,7 @@ const btnMatrix = [
 const ops = ["/", "*", "+", "-", ".", "%"];
 
 export default function ButtonMatrix() {
-  const { calc, result, dispatch } = useCalc();
+  const { calc, dispatch } = useCalc();
 
   useEffect(() => {
     const refreshResult = () => {
@@ -28,7 +29,13 @@ export default function ButtonMatrix() {
         dispatch({type: "UPDATE_RESULT", payload: ""});
       }
     }
+
+    const updateTitle = () => {
+      document.title = `Calc.io ${calc ? "|" : ""} ${calc ? calc : ""}`;
+    }
+
     refreshResult();
+    updateTitle();
   }, [calc]);
 
   const calculate = () => {

@@ -10,14 +10,14 @@ import { CalcContextProvider } from "./context/CalcContext.jsx";
 
 export default function App() {
   return (
-    <CalcContextProvider>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<CalculatorPage />} />
-          <Route path="history" element={<HistoryPage />} />
-        </Route>
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-    </CalcContextProvider>
+      <CalcContextProvider>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<CalculatorPage />} />
+            <Route path="history" element={<HistoryPage />} />
+          </Route>
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </CalcContextProvider>
   );
 }

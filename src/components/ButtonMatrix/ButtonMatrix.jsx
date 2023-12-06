@@ -16,6 +16,8 @@ const btnMatrix = [
 
 const ops = ["/", "*", "+", "-", ".", "%"];
 
+const dangerValues = ["NaN", "Infinity"];
+
 export default function ButtonMatrix() {
   const { calc, dispatch } = useCalc();
 
@@ -39,14 +41,14 @@ export default function ButtonMatrix() {
   }, [calc]);
 
   const calculate = () => {
-    if(calc != "") {
+    if(calc != "" && !dangerValues.includes(calc)) {
       const payload = eval(calc).toString();
       dispatch({type: "SET_CALC", payload});
     }
   }
 
   const del = () => {
-    if(calc != "") {
+    if(calc != "" && !dangerValues.includes(calc)) {
       const payload = calc.slice(0, -1);
       dispatch({type: "SET_CALC", payload});
     }
@@ -78,7 +80,9 @@ export default function ButtonMatrix() {
       return;
     }
 
-    dispatch({type: "UPDATE_CALC", payload: value.toString()});
+    if(!dangerValues.includes(calc)) {
+      dispatch({type: "UPDATE_CALC", payload: value.toString()});
+    }
   }
 
   return (

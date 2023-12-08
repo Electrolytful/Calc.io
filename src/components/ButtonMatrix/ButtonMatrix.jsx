@@ -1,9 +1,11 @@
 import styles from "./ButtonMatrix.module.scss";
 import { useEffect } from "react";
 
-import { useCalc } from "../../hooks/useCalc.jsx";
-
 import Button from "../Button/Button";
+
+import { useCalc } from "../../hooks/useCalc.jsx";
+import { useCalcHistory } from "../../hooks/useCalcHistory.jsx";
+import { storeCalculation } from "../../localStorage/functions.js";
 
 const btnMatrix = [
   ["C", "DEL", "%", "/"],
@@ -19,6 +21,7 @@ const dangerValues = ["NaN", "Infinity"];
 
 export default function ButtonMatrix() {
   const { calc, allowDecimal, dispatch } = useCalc();
+  const { dispatch: historyDispatch } = useCalcHistory();
 
   useEffect(() => {
     const refreshResult = () => {
@@ -41,8 +44,14 @@ export default function ButtonMatrix() {
 
   const calculate = () => {
     if (calc != "" && !dangerValues.includes(calc)) {
-      const payload = eval(calc).toString();
-      dispatch({ type: "SET_CALC", payload });
+      const result = eval(calc).toString();
+      storeCalculation(calc, result);
+
+      dispatch({ type: "SET_CALC", payload: result });
+      historyDispatch({
+        type: "UPDATE_HISTORY",
+        payload: `${calc} = ${result}`,
+      });
     }
   };
 

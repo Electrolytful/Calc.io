@@ -1,3 +1,4 @@
+import styles from "./HistoryPage.module.scss";
 import { useEffect } from "react";
 import { useCalcHistory } from "../../hooks/useCalcHistory.jsx";
 import { clearCalculations } from "../../localStorage/functions.js";
@@ -22,21 +23,27 @@ export default function HistoryPage() {
   }, []);
 
   return (
-    <div className="historyPage">
+    <div className={styles.historyPage}>
       <h2>History ({calcHistory.length})</h2>
-      <button className="historyPage__clear" onClick={handleClearHistory}>
+      <button
+        className={styles.historyPage__clear}
+        onClick={handleClearHistory}
+      >
         Clear History
       </button>
-      <ul>
-        {calcHistory.length ? (
-          calcHistory.map((item, i) => <History key={i} content={item} />)
-        ) : (
-          <p className="historyPage__empty">
-            Looks like there is no history. Try making some calculations and
-            coming back.
-          </p>
-        )}
-      </ul>
+
+      {calcHistory.length ? (
+        <ul className={styles.historyPage__list}>
+          {calcHistory.map((item, i) => (
+            <History key={i} content={item} />
+          ))}
+        </ul>
+      ) : (
+        <p className={styles.historyPage__empty}>
+          Looks like there is no history. Try making some calculations and
+          coming back.
+        </p>
+      )}
     </div>
   );
 }

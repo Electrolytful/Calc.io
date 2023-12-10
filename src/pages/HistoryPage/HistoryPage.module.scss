@@ -1,0 +1,54 @@
+@import "../../variables.scss";
+
+.historyPage {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 10rem min-content;
+
+    h2 {
+        grid-column: 2 / 3;
+        justify-self: center;
+        align-self: center;
+
+        font-size: 5rem;
+        color: $color-primary;
+    }
+
+    &__clear {
+        justify-self: center;
+        align-self: center;
+
+        font-size: 1.5rem;
+        padding: 1rem 1.5rem;
+        border-radius: 1rem;
+        border: none;
+        color: $color-primary;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+            border: 1px solid $color-primary;
+        }
+    }
+
+    &__empty {
+        grid-column: 1 / -1;
+        justify-self: center;
+
+        font-size: 2rem;
+        padding: 2rem;
+        color: $color-primary;
+    }
+
+    &__list {
+        grid-column: 2 / span 1;
+        grid-row: 2 / -1;
+        margin-top: 5rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+}

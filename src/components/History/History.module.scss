@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+
+.history {
+    min-height: 15rem;
+    background-color: $color-primary;
+    font-size: 2.5rem;
+    padding: 2rem;
+    border-radius: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -10,6 +10,20 @@
 
 html {
     font-size: 62.5%;
+
+    @media only screen and (width <= 900px) {
+        font-size: 55%;
+    }
+
+    @media only screen and (width <= 550px) {
+        font-size: 50%;
+    }
+    @media only screen and (width <= 450px) {
+        font-size: 45%;
+    }
+    @media only screen and (width <= 390px) {
+        font-size: 40%;
+    }
 }
 
 body {

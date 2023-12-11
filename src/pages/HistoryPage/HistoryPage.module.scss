@@ -7,6 +7,12 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 10rem min-content;
 
+    @media only screen and (width <= 600px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 10rem) min-content;
+        margin-top: 2rem;
+    }
+
     h2 {
         grid-column: 2 / 3;
         justify-self: center;
@@ -14,6 +20,14 @@
 
         font-size: 5rem;
         color: $color-primary;
+
+        @media only screen and (width <= 750px) {
+            font-size: 4rem;
+        }
+
+        @media only screen and (width <= 600px) {
+            grid-column: 1;
+        }
     }
 
     &__clear {
@@ -31,6 +45,10 @@
         &:hover {
             border: 1px solid $color-primary;
         }
+
+        @media only screen and (width <= 600px) {
+            grid-row: 2 / span 1;
+        }
     }
 
     &__empty {
@@ -40,15 +58,30 @@
         font-size: 2rem;
         padding: 2rem;
         color: $color-primary;
+        text-align: center;
+
+        @media only screen and (width <= 750px) {
+            font-size: 1.5rem;
+        }
     }
 
     &__list {
         grid-column: 2 / span 1;
         grid-row: 2 / -1;
-        margin-top: 5rem;
+
+        margin: 5rem 0;
 
         display: flex;
         flex-direction: column;
         gap: 3rem;
+
+        @media only screen and (width <= 1200px) {
+            grid-column: 1 / -1;
+        }
+
+        @media only screen and (width <= 600px) {
+            grid-column: 1;
+            grid-row: 3;
+        }
     }
 }

@@ -32,7 +32,7 @@
 ## About The Project
 Calc.io is a calculator from which a user can perform basic calculations and get the result updating in realtime without having to press the equals button. It also stores calculations made by the user, which can be displayed on the history page as well as cleared. This project is developed using React.js as well as Sass.
 
-<b>Link to live demo: (project still under development)</b>
+<b>Link to live demo: https://calcio-erhandev.vercel.app</b>
 
 <p align="right">(<a href="#readme-top">Back to top</a>)</p>
 

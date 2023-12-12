@@ -86,14 +86,18 @@ export default function ButtonMatrix() {
 
   // click handler function that is called whenever a calculator button is clicked
   const handleClick = (value) => {
-    // break out of function if the value inputted is an:
-    // operator and there is no other value inputted
-    // operator and the previous value was also an operator
+    // break out of function if the value inputted is:
+    // an operator and there is no other value inputted
+    // an operator and the previous value was also an operator
     // a decimal point and the value of the "allowDecimal" global state is false
+    // is neither an operator or "C" and "calc" is equal to 0
+    // is "DEL" and "calc" is equal to 0
     if (
       (ops.includes(value) && calc === "") ||
       (ops.includes(value) && ops.includes(calc.slice(-1))) ||
-      (value.toString() === "." && !allowDecimal)
+      (value.toString() === "." && !allowDecimal) ||
+      (calc === "0" && !ops.includes(value) && value.toString() != "C") ||
+      (calc === "0" && value.toString() === "DEL")
     ) {
       return;
     }

@@ -1,12 +1,14 @@
 import styles from "./HistoryPage.module.scss";
 import { useEffect } from "react";
 import { useCalcHistory } from "../../hooks/useCalcHistory.jsx";
+import { useCurrentPage } from "../../hooks/useCurrentPage.jsx";
 import { clearCalculations } from "../../localStorage/functions.js";
 
 import History from "../../components/History/History.jsx";
 
 export default function HistoryPage() {
   const { calcHistory, dispatch } = useCalcHistory();
+  const { setCurrentPage } = useCurrentPage();
 
   const setTitle = () => {
     document.title = `Calc.io | History (${calcHistory.length})`;
@@ -20,6 +22,7 @@ export default function HistoryPage() {
 
   useEffect(() => {
     setTitle();
+    setCurrentPage("history");
   }, []);
 
   return (

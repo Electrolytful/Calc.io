@@ -7,13 +7,16 @@ import { BrowserRouter } from "react-router-dom";
 
 import { CalcContextProvider } from "./context/CalcContext.jsx";
 import { CalcHistoryContextProvider } from "./context/CalcHistoryContext.jsx";
+import { CurrentPageContextProvider } from "./context/CurrentPageContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <CalcContextProvider>
-    <CalcHistoryContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </CalcHistoryContextProvider>
-  </CalcContextProvider>
+  <CurrentPageContextProvider>
+    <CalcContextProvider>
+      <CalcHistoryContextProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </CalcHistoryContextProvider>
+    </CalcContextProvider>
+  </CurrentPageContextProvider>
 );

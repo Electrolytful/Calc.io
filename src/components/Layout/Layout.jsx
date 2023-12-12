@@ -2,7 +2,11 @@ import styles from "./Layout.module.scss";
 
 import { NavLink, Outlet } from "react-router-dom";
 
+import { useCurrentPage } from "../../hooks/useCurrentPage.jsx";
+
 export default function Layout() {
+  const { currentPage } = useCurrentPage();
+
   return (
     <>
       <header className={styles.header}>
@@ -16,7 +20,11 @@ export default function Layout() {
           </li>
         </ul>
       </header>
-      <main className={styles.main}>
+      <main
+        className={`${styles.main} ${
+          currentPage === "calculator" && styles.main_calculator
+        } ${currentPage === "history" && styles.main_history}`}
+      >
         <Outlet />
       </main>
       <footer className={styles.footer}>

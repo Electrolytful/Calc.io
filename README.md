@@ -3,7 +3,7 @@
 
 <!-- PROJECT LOGO -->
 <p align="center">
-  <img src="" alt="project logo" height=250px width=250px aspect-ratio="1 / 1" align="center" />
+  <img src="public/img/calc.png" alt="project logo" height=250px width=250px aspect-ratio="1 / 1" align="center" />
 </p>
 
 
@@ -30,7 +30,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
+Calc.io is a calculator from which a user can perform basic calculations and get the result updating in realtime without having to press the equals button. It also stores calculations made by the user, which can be displayed on the history page as well as cleared. This project is developed using React.js as well as Sass.
 
 <b>Link to live demo: (project still under development)</b>
 
@@ -53,7 +53,12 @@
 
 <!-- Screenshots -->
 ## Screenshots
-
+<img src="public/screenshots/calculator.png" alt="calculator" width="1200" />
+<img src="public/screenshots/history.png" alt="history" width="1200" />
+<img src="public/screenshots/history-empty.png" alt="history empty" width="1200" />
+<img src="public/screenshots/calculator-phone.jpg" alt="calculator phone" width="300" />
+<img src="public/screenshots/history-phone.jpg" alt="history phone" width="300" />
+<img src="public/screenshots/history-empty-phone.jpg" alt="history empty phone" width="300" />
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

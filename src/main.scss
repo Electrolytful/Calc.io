@@ -3,49 +3,53 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 
-    @media only screen and (width <= 900px) {
-        font-size: 55%;
-    }
+  @media only screen and (width <= 900px) {
+    font-size: 55%;
+  }
 
-    @media only screen and (width <= 550px) {
-        font-size: 50%;
-    }
-    @media only screen and (width <= 450px) {
-        font-size: 45%;
-    }
-    @media only screen and (width <= 390px) {
-        font-size: 40%;
-    }
+  @media only screen and (width <= 550px) {
+    font-size: 50%;
+  }
+  @media only screen and (width <= 450px) {
+    font-size: 45%;
+  }
+  @media only screen and (width <= 390px) {
+    font-size: 40%;
+  }
 }
 
 body {
-    min-height: 100vh;
-    background-image: linear-gradient(to bottom, $color-primary-light, $color-grey);
-    background-repeat: no-repeat;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    $color-primary-light,
+    $color-grey
+  );
+  background-repeat: no-repeat;
 
-    font-family: $font-main;
-    color: $color-white;
-    line-height: 1.6;
+  font-family: $font-main;
+  color: $color-white;
+  line-height: 1.6;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 
-    li {
-        a.active {
-            border-bottom: 2px solid $color-grey;
+  li {
+    a.active {
+      border-bottom: 2px solid $color-grey;
 
-            &:hover {
-                border-bottom: 2px solid $color-grey;
-            }
-        }
+      &:hover {
+        border-bottom: 2px solid $color-grey;
+      }
     }
+  }
 }

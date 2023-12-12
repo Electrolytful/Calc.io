@@ -1,35 +1,35 @@
 @import "../../variables.scss";
 
 .btn {
-    background-color: $color-white;
-    height: 10rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    border: none;
-    cursor: pointer;
-    color: $color-black;
-    font-size: 2rem;
+  background-color: $color-white;
+  height: 10rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  color: $color-black;
+  font-size: 2rem;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    transition: scale .2s;
+  transition: scale 0.2s;
 
-    &:hover {
-        border: 2px solid $color-primary;
-    }
+  &:hover {
+    border: 2px solid $color-primary;
+  }
 
-    &:active {
-        transform: scale(1.05);
-    }
+  &:active {
+    transform: scale(1.05);
+  }
 }
 
 .equals {
-    background-color: $color-green;
-    grid-column: 3 / 5;
+  background-color: $color-green;
+  grid-column: 3 / 5;
 }
 
 .opt {
-    background-color: $color-orange;
+  background-color: $color-orange;
 }

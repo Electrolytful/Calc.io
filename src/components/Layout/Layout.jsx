@@ -20,11 +20,7 @@ export default function Layout() {
           </li>
         </ul>
       </header>
-      <main
-        className={`${styles.main} ${
-          currentPage === "calculator" && styles.main_calculator
-        } ${currentPage === "history" && styles.main_history}`}
-      >
+      <main className={`${styles.main} ${styles[currentPage]}`}>
         <Outlet />
       </main>
       <footer className={styles.footer}>

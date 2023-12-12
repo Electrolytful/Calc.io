@@ -1,87 +1,87 @@
 @import "../../variables.scss";
 
 .historyPage {
-    width: 100%;
+  width: 100%;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 10rem min-content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 10rem min-content;
+
+  @media only screen and (width <= 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 10rem) min-content;
+    margin-top: 2rem;
+  }
+
+  h2 {
+    grid-column: 2 / 3;
+    justify-self: center;
+    align-self: center;
+
+    font-size: 5rem;
+    color: $color-primary;
+
+    @media only screen and (width <= 750px) {
+      font-size: 4rem;
+    }
 
     @media only screen and (width <= 600px) {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, 10rem) min-content;
-        margin-top: 2rem;
+      grid-column: 1;
+    }
+  }
+
+  &__clear {
+    justify-self: center;
+    align-self: center;
+
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    color: $color-primary;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid $color-primary;
     }
 
-    h2 {
-        grid-column: 2 / 3;
-        justify-self: center;
-        align-self: center;
+    @media only screen and (width <= 600px) {
+      grid-row: 2 / span 1;
+    }
+  }
 
-        font-size: 5rem;
-        color: $color-primary;
+  &__empty {
+    grid-column: 1 / -1;
+    justify-self: center;
 
-        @media only screen and (width <= 750px) {
-            font-size: 4rem;
-        }
+    font-size: 2rem;
+    padding: 2rem;
+    color: $color-primary;
+    text-align: center;
 
-        @media only screen and (width <= 600px) {
-            grid-column: 1;
-        }
+    @media only screen and (width <= 750px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__list {
+    grid-column: 2 / span 1;
+    grid-row: 2 / -1;
+
+    margin: 5rem 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @media only screen and (width <= 1200px) {
+      grid-column: 1 / -1;
     }
 
-    &__clear {
-        justify-self: center;
-        align-self: center;
-
-        font-size: 1.5rem;
-        padding: 1rem 1.5rem;
-        border-radius: 1rem;
-        border: none;
-        color: $color-primary;
-        background-color: transparent;
-        cursor: pointer;
-
-        &:hover {
-            border: 1px solid $color-primary;
-        }
-
-        @media only screen and (width <= 600px) {
-            grid-row: 2 / span 1;
-        }
+    @media only screen and (width <= 600px) {
+      grid-column: 1;
+      grid-row: 3;
     }
-
-    &__empty {
-        grid-column: 1 / -1;
-        justify-self: center;
-
-        font-size: 2rem;
-        padding: 2rem;
-        color: $color-primary;
-        text-align: center;
-
-        @media only screen and (width <= 750px) {
-            font-size: 1.5rem;
-        }
-    }
-
-    &__list {
-        grid-column: 2 / span 1;
-        grid-row: 2 / -1;
-
-        margin: 5rem 0;
-
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-
-        @media only screen and (width <= 1200px) {
-            grid-column: 1 / -1;
-        }
-
-        @media only screen and (width <= 600px) {
-            grid-column: 1;
-            grid-row: 3;
-        }
-    }
+  }
 }

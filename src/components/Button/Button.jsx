@@ -1,5 +1,6 @@
 import styles from "./Button.module.scss";
 
+// function that returns the classname of the btn depending on the value passed in by the component prop
 const getBtnStyle = (btn) => {
   const btnStyles = {
     "=": "equals",

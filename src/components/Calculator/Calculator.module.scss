@@ -1,13 +1,13 @@
 @import "../../variables.scss";
 
 .calculator {
-    background-color: $color-primary;
-    width: 50rem;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 .8rem .3rem rgba(0,0,0,0.1);
+  background-color: $color-primary;
+  width: 50rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.8rem 0.3rem rgba(0, 0, 0, 0.1);
 
-    @media only screen and (width <= 340px) {
-        width: 45rem;
-    }
+  @media only screen and (width <= 340px) {
+    width: 45rem;
+  }
 }

@@ -41,17 +41,17 @@
   @media only screen and (width <= 550px) {
     padding: 1rem;
   }
+}
 
-  &_calculator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.calculator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  &_history {
-    display: flex;
-    justify-content: center;
-  }
+.history {
+  display: flex;
+  justify-content: center;
 }
 
 .footer {
